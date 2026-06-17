@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="KissImageConverter.Core/KissImageConverter.Core.csproj" />
+  <Project Path="KissImageConverter.Wpf/KissImageConverter.Wpf.csproj" />
+</Solution>
