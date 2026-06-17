@@ -13,6 +13,8 @@ The only supported conversion is:
 > **HEIC → JPG**
 
 Sometimes all you need is a button that just works. ✨
+
+<img width="1072" height="1035" alt="image" src="https://github.com/user-attachments/assets/e4a42d72-64a0-4531-80f4-291090724663" />
 ---
 
 ## 📸 Why?
