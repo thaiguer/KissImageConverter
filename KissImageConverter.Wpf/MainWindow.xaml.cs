@@ -47,8 +47,8 @@ public partial class MainWindow : Window
             });
 
             MessageBox.Show(
-                "Conversão concluída.",
-                "Sucesso",
+                "Conversion finished.",
+                "Success",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
         }
@@ -56,7 +56,7 @@ public partial class MainWindow : Window
         {
             MessageBox.Show(
                 ex.Message,
-                "Erro",
+                "Error",
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
         }
