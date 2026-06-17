@@ -15,17 +15,14 @@ The only supported conversion is:
 Sometimes all you need is a button that just works. ✨
 
 <img width="1072" height="1035" alt="image" src="https://github.com/user-attachments/assets/e4a42d72-64a0-4531-80f4-291090724663" />
----
 
 ## 📸 Why?
 Windows doesn't always handle HEIC images out of the box, and many computers don't have the required codecs installed. KissImageConverter aims to provide a simple and free solution without the hassle.
----
 
 ## ❤️ Credits
 A huge thank you to the developers of **Magick.NET** for providing an excellent image processing library that makes this project possible.
 
 🔗 https://github.com/dlemstra/Magick.NET
----
 
 ## 🛠️ Philosophy
 > **Keep It Stupid Simple.**
@@ -36,7 +33,6 @@ No ads. 📢❌
 No complicated settings. ⚙️❌
 
 Just convert your images and move on with your day. ☕😁
----
 
 ## 📜 License
 
