@@ -125,7 +125,10 @@
 
                     </StackPanel>
 
-                    <ProgressBar Name="ProgressBar" Grid.Row="5"/>
+                    <ProgressBar Name="ProgressBar"
+                                 Grid.Row="5"
+                                 Background="#404040"
+                                 BorderThickness="0"/>
 
                     <Button
                     Grid.Row="7"

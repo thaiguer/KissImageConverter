@@ -60,8 +60,10 @@ public partial class MainWindow : Window
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
         }
-
-        ProgressBar.IsIndeterminate = false;
+        finally
+        {
+            ProgressBar.IsIndeterminate = false;
+        }
     }
 
     private void DropArea_DragEnter(object sender, DragEventArgs e)
