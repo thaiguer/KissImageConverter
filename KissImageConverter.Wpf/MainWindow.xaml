@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KissImageConverter.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="800"
+        Title="Kiss Conversion" Height="800" Width="800"
         Background="#212121">
     <Grid>
         <ScrollViewer
@@ -34,16 +34,14 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <!-- Título -->
                     <TextBlock
                     Grid.Row="0"
-                    Text="Conversor HEIC para JPG"
+                    Text="Convert HEIC to JPG"
                     FontSize="24"
                     FontWeight="SemiBold"
                     Foreground="White"
                     Margin="0,0,0,25"/>
 
-                    <!-- Drag and Drop -->
                     <Border
                     Grid.Row="1"
                     Name="DropArea"
@@ -67,13 +65,13 @@
                             Foreground="#10A37F"/>
 
                             <TextBlock
-                            Text="Arraste imagens .HEIC aqui"
+                            Text="Drag and drop .HEIC files here"
                             FontSize="16"
                             Foreground="White"
                             HorizontalAlignment="Center"/>
 
                             <TextBlock
-                            Text="ou clique para selecionar arquivos"
+                            Text="or click to select"
                             FontSize="12"
                             Foreground="#B0B0B0"
                             HorizontalAlignment="Center"/>
@@ -82,15 +80,13 @@
 
                     </Border>
 
-                    <!-- Arquivos -->
                     <TextBlock
                     Grid.Row="2"
-                    Text="Arquivos"
+                    Text="Files"
                     FontSize="16"
                     Foreground="White"
                     Margin="0,25,0,10"/>
 
-                    <!-- Lista -->
                     <ListBox
                     Grid.Row="3"
                     Name="ListBoxFiles"
@@ -109,13 +105,12 @@
 
                     </ListBox>
 
-                    <!-- Destino -->
                     <StackPanel
                     Grid.Row="4"
                     Margin="0,25,0,25">
 
                         <TextBlock
-                        Text="Pasta de destino"
+                        Text="Destination folder"
                         Foreground="#B0B0B0"
                         Margin="0,0,0,5"/>
 
@@ -132,11 +127,10 @@
 
                     <ProgressBar Name="ProgressBar" Grid.Row="5"/>
 
-                    <!-- Botão -->
                     <Button
                     Grid.Row="7"
                     Height="45"
-                    Content="Converter"
+                    Content="Convert"
                     Background="#10A37F"
                     Foreground="White"
                     FontWeight="SemiBold"
