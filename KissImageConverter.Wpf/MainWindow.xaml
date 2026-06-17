@@ -5,148 +5,111 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KissImageConverter.Wpf"
         mc:Ignorable="d"
-        Title="Kiss Conversion" Height="800" Width="800"
+        Title="Kiss Conversion"
+        Height="800"
+        Width="800"
         Background="#212121">
     <Grid>
-        <ScrollViewer
-        VerticalScrollBarVisibility="Auto"
-        HorizontalScrollBarVisibility="Disabled">
-
-            <Border
-            Width="700"
-            Margin="20"
-            Padding="30"
-            Background="#2F2F2F"
-            CornerRadius="20"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top">
-
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+            <Border Width="700"
+                    Margin="20"
+                    Padding="30"
+                    Background="#2F2F2F"
+                    CornerRadius="20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
                 <Grid>
-
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="200"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="10"/>
-                        <RowDefinition Height="10"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="200" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-
-                    <TextBlock
-                    Grid.Row="0"
-                    Text="Convert HEIC to JPG"
-                    FontSize="24"
-                    FontWeight="SemiBold"
-                    Foreground="White"
-                    Margin="0,0,0,25"/>
-
-                    <Border
-                    Grid.Row="1"
-                    Name="DropArea"
-                    Height="120"
-                    Background="#404040"
-                    BorderBrush="#606060"
-                    BorderThickness="2"
-                    CornerRadius="15"
-                    AllowDrop="True"
-                    DragEnter="DropArea_DragEnter"
-                    Drop="DropArea_Drop">
-
-                        <StackPanel
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center">
-
-                            <TextBlock
-                            Text="📷"
-                            FontSize="32"
-                            HorizontalAlignment="Center"
-                            Foreground="#10A37F"/>
-
-                            <TextBlock
-                            Text="Drag and drop .HEIC files here"
-                            FontSize="16"
-                            Foreground="White"
-                            HorizontalAlignment="Center"/>
-
-                            <TextBlock
-                            Text="or click to select"
-                            FontSize="12"
-                            Foreground="#B0B0B0"
-                            HorizontalAlignment="Center"/>
-
+                    <TextBlock Grid.Row="0"
+                               Text="Convert HEIC to JPG"
+                               FontSize="24"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               Margin="0,0,0,25" />
+                    <Border Grid.Row="1"
+                            Name="DropArea"
+                            Height="120"
+                            Background="#404040"
+                            BorderBrush="#606060"
+                            BorderThickness="2"
+                            CornerRadius="15"
+                            AllowDrop="True"
+                            DragEnter="DropArea_DragEnter"
+                            Drop="DropArea_Drop">
+                        <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="📷"
+                                       FontSize="32"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#10A37F" />
+                            <TextBlock Text="Drag and drop .HEIC files here"
+                                       FontSize="16"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center" />
+                            <TextBlock Text="or click to select"
+                                       FontSize="12"
+                                       Foreground="#B0B0B0"
+                                       HorizontalAlignment="Center" />
                         </StackPanel>
-
                     </Border>
-
-                    <TextBlock
-                    Grid.Row="2"
-                    Text="Files"
-                    FontSize="16"
-                    Foreground="White"
-                    Margin="0,25,0,10"/>
-
-                    <ListBox
-                    Grid.Row="3"
-                    Name="ListBoxFiles"
-                    Background="#404040"
-                    Foreground="White"
-                    BorderThickness="0">
-
+                    <TextBlock Grid.Row="2"
+                               Text="Files"
+                               FontSize="16"
+                               Foreground="White"
+                               Margin="0,25,0,10" />
+                    <ListBox Grid.Row="3"
+                             Name="ListBoxFiles"
+                             Background="#404040"
+                             Foreground="White"
+                             BorderThickness="0">
                         <ListBox.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
-                                <Setter Property="Padding" Value="8"/>
-                                <Setter Property="Margin" Value="0,2"/>
-                                <Setter Property="Background" Value="#505050"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Padding" Value="8" />
+                                <Setter Property="Margin" Value="0,2" />
+                                <Setter Property="Background" Value="#505050" />
+                                <Setter Property="Foreground" Value="White" />
                             </Style>
                         </ListBox.ItemContainerStyle>
-
                     </ListBox>
-
-                    <StackPanel
-                    Grid.Row="4"
-                    Margin="0,25,0,25">
-
-                        <TextBlock
-                        Text="Destination folder"
-                        Foreground="#B0B0B0"
-                        Margin="0,0,0,5"/>
-
-                        <TextBox
-                        Name="TextBoxDestino"
-                        Height="40"
-                        Padding="10"
-                        Background="#404040"
-                        Foreground="White"
-                        BorderBrush="#606060"
-                        BorderThickness="1"/>
-
+                    <StackPanel Grid.Row="4"
+                                Margin="0,25,0,25">
+                        <TextBlock Text="Destination folder"
+                                   Foreground="#B0B0B0"
+                                   Margin="0,0,0,5" />
+                        <TextBox Name="TextBoxDestino"
+                                 Height="40"
+                                 Padding="10"
+                                 Background="#404040"
+                                 Foreground="White"
+                                 BorderBrush="#606060"
+                                 BorderThickness="1" />
                     </StackPanel>
-
                     <ProgressBar Name="ProgressBar"
                                  Grid.Row="5"
                                  Background="#404040"
-                                 BorderThickness="0"/>
-
-                    <Button
-                    Grid.Row="7"
-                    Height="45"
-                    Content="Convert"
-                    Background="#10A37F"
-                    Foreground="White"
-                    FontWeight="SemiBold"
-                    FontSize="15"
-                    BorderThickness="0"
-                    Cursor="Hand"
-                    Click="Button_Click"/>
-
+                                 BorderThickness="0" />
+                    <Button Grid.Row="7"
+                            Height="45"
+                            Content="Convert"
+                            Background="#10A37F"
+                            Foreground="White"
+                            FontWeight="SemiBold"
+                            FontSize="15"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="Button_Click" />
                 </Grid>
-
             </Border>
-
         </ScrollViewer>
-
     </Grid>
 </Window>
