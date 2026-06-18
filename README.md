@@ -15,7 +15,7 @@ The only supported conversion is:
 
 Sometimes all you need is a button that just works. ✨
 
-<img width="712" height="561" alt="image" src="https://github.com/user-attachments/assets/9b1ea15f-d9d7-4dc0-b441-d4353e8cc0ae" />
+<img width="500" height="392" alt="image" src="https://github.com/user-attachments/assets/9b1ea15f-d9d7-4dc0-b441-d4353e8cc0ae" />
 
 ## 📸 Why?
 Windows doesn't always handle HEIC images out of the box, and many computers don't have the required codecs installed. KissImageConverter aims to provide a simple and free solution without the hassle.
