@@ -28,10 +28,10 @@ A huge thank you to the developers of **Magick.NET** for providing an excellent 
 ## 🛠️ Philosophy
 > **Keep It Stupid Simple.**
 
-No cloud. ☁️❌
-No subscriptions. 💸❌
-No ads. 📢❌
-No complicated settings. ⚙️❌
+- No cloud. ☁️❌
+- No subscriptions. 💸❌
+- No ads. 📢❌
+- No complicated settings. ⚙️❌
 
 Just convert your images and move on with your day. ☕😁
 
