@@ -12,24 +12,28 @@
         MinHeight="500"
         Background="#212121"
         WindowStartupLocation="CenterScreen">
+
     <Grid AllowDrop="True"
           DragEnter="DropArea_DragEnter"
           DragOver="DropArea_DragOver"
           Drop="DropArea_Drop"
           Margin="12">
+
         <Border Background="#2F2F2F"
                 CornerRadius="8"
                 Padding="12">
+
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="90" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="10" />
-                    <RowDefinition Height="10" />
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0"
@@ -37,7 +41,7 @@
                            FontSize="18"
                            FontWeight="SemiBold"
                            Foreground="White"
-                           Margin="0,0,0,10" />
+                           Margin="0,0,0,10"/>
 
                 <Border Grid.Row="1"
                         Name="DropArea"
@@ -46,20 +50,24 @@
                         BorderThickness="1"
                         CornerRadius="6"
                         Margin="0,0,0,10">
+
                     <StackPanel HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
+
                         <TextBlock Text="📷"
                                    FontSize="22"
                                    HorizontalAlignment="Center"
-                                   Foreground="#10A37F" />
+                                   Foreground="#10A37F"/>
+
                         <TextBlock Text="Drag and drop .HEIC files here"
                                    FontSize="13"
                                    Foreground="White"
-                                   HorizontalAlignment="Center" />
+                                   HorizontalAlignment="Center"/>
+
                         <TextBlock Text="or click to select"
                                    FontSize="10"
                                    Foreground="#B0B0B0"
-                                   HorizontalAlignment="Center" />
+                                   HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Border>
 
@@ -68,7 +76,7 @@
                            FontSize="12"
                            FontWeight="SemiBold"
                            Foreground="White"
-                           Margin="0,0,0,4" />
+                           Margin="0,0,0,4"/>
 
                 <ListBox Grid.Row="3"
                          Name="ListBoxFiles"
@@ -78,35 +86,38 @@
                          BorderThickness="1"
                          ScrollViewer.VerticalScrollBarVisibility="Auto"
                          Margin="0,0,0,10">
+
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
-                            <Setter Property="Padding" Value="4" />
-                            <Setter Property="Margin" Value="1" />
-                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="Padding" Value="4"/>
+                            <Setter Property="Margin" Value="1"/>
+                            <Setter Property="Foreground" Value="White"/>
                         </Style>
                     </ListBox.ItemContainerStyle>
                 </ListBox>
 
                 <Grid Grid.Row="4"
                       Margin="0,0,0,10">
+
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0"
                                Text="Destination folder"
                                FontSize="11"
                                Foreground="#B0B0B0"
-                               Margin="0,0,0,4" />
+                               Margin="0,0,0,4"/>
 
                     <Grid Grid.Row="1">
+
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="8" />
-                            <ColumnDefinition Width="90" />
-                            <ColumnDefinition Width="8" />
-                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="70"/>
                         </Grid.ColumnDefinitions>
 
                         <TextBox Grid.Column="0"
@@ -116,7 +127,7 @@
                                  Background="#404040"
                                  Foreground="White"
                                  BorderBrush="#606060"
-                                 BorderThickness="1" />
+                                 BorderThickness="1"/>
 
                         <Button Grid.Column="2"
                                 Height="30"
@@ -125,7 +136,7 @@
                                 Foreground="White"
                                 BorderThickness="0"
                                 Cursor="Hand"
-                                Click="ButtonBrowse_Click" />
+                                Click="ButtonBrowse_Click"/>
 
                         <Button Grid.Column="4"
                                 Height="30"
@@ -134,20 +145,21 @@
                                 Foreground="White"
                                 BorderThickness="0"
                                 Cursor="Hand"
-                                Click="ButtonOpenFolder_Click" />
+                                Click="ButtonOpenFolder_Click"/>
                     </Grid>
                 </Grid>
 
                 <ProgressBar Name="ProgressBar"
                              Grid.Row="5"
                              Background="#404040"
-                             BorderThickness="0" />
+                             BorderThickness="0"/>
 
                 <Grid Grid.Row="7">
+
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <Button Grid.Column="0"
@@ -159,7 +171,7 @@
                             FontSize="13"
                             BorderThickness="0"
                             Cursor="Hand"
-                            Click="ButtonClear_Click" />
+                            Click="ButtonClear_Click"/>
 
                     <Button Grid.Column="2"
                             Name="ButtonConvert"
@@ -171,8 +183,15 @@
                             FontSize="13"
                             BorderThickness="0"
                             Cursor="Hand"
-                            Click="Button_Click" />
+                            Click="Button_Click"/>
                 </Grid>
+
+                <TextBlock Grid.Row="8"
+                           Name="TextBlockVersion"
+                           Margin="0,8,0,0"
+                           HorizontalAlignment="Right"
+                           FontSize="11"
+                           Foreground="#808080"/>
             </Grid>
         </Border>
     </Grid>

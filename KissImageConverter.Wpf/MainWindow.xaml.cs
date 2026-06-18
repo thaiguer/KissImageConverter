@@ -11,6 +11,9 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
+        TextBlockVersion.Text =
+            $"{ApplicationInfo.GetApplicationVersion()}";
+
         TextBoxDestino.Text = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
             "Converted");
@@ -23,6 +26,17 @@ public partial class MainWindow : Window
         try
         {
             string destinationFolder = TextBoxDestino.Text.Trim();
+
+            if (ListBoxFiles.Items.Count == 0)
+            {
+                MessageBox.Show(
+                    "Please add at least one HEIC file.",
+                    "Information",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+
+                return;
+            }
 
             if (string.IsNullOrWhiteSpace(destinationFolder))
             {
@@ -92,14 +106,16 @@ public partial class MainWindow : Window
     private void DropArea_Drop(object sender, DragEventArgs e)
     {
         if (!e.Data.GetDataPresent(DataFormats.FileDrop))
+        {
             return;
+        }
 
         string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
         foreach (string file in files)
         {
             if (!Path.GetExtension(file)
-                     .Equals(".heic", StringComparison.OrdinalIgnoreCase))
+                .Equals(".heic", StringComparison.OrdinalIgnoreCase))
             {
                 continue;
             }
