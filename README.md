@@ -1,4 +1,5 @@
-# 🖼️ KissImageConverter
+# <img width="1024" height="1024" alt="app" src="https://github.com/user-attachments/assets/d63eaf8b-62f3-4e5b-86e2-56e3d5afe0f4" />
+ KissImageConverter
 
 **KISS = Keep It Stupid Simple** 😎
 
@@ -14,7 +15,7 @@ The only supported conversion is:
 
 Sometimes all you need is a button that just works. ✨
 
-<img width="1072" height="1035" alt="image" src="https://github.com/user-attachments/assets/e4a42d72-64a0-4531-80f4-291090724663" />
+<img width="712" height="561" alt="image" src="https://github.com/user-attachments/assets/9b1ea15f-d9d7-4dc0-b441-d4353e8cc0ae" />
 
 ## 📸 Why?
 Windows doesn't always handle HEIC images out of the box, and many computers don't have the required codecs installed. KissImageConverter aims to provide a simple and free solution without the hassle.
