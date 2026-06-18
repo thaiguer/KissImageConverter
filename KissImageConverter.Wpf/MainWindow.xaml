@@ -29,7 +29,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="10" />
                     <RowDefinition Height="10" />
-                    <RowDefinition Height="36" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0"
@@ -107,16 +107,36 @@
                              Background="#404040"
                              BorderThickness="0" />
 
-                <Button Grid.Row="7"
-                        Height="36"
-                        Content="Convert"
-                        Background="#10A37F"
-                        Foreground="White"
-                        FontWeight="SemiBold"
-                        FontSize="13"
-                        BorderThickness="0"
-                        Cursor="Hand"
-                        Click="Button_Click" />
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            Height="36"
+                            Content="Clear"
+                            Background="#505050"
+                            Foreground="White"
+                            FontWeight="SemiBold"
+                            FontSize="13"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="ButtonClear_Click" />
+
+                    <Button Grid.Column="2"
+                            Name="ButtonConvert"
+                            Height="36"
+                            Content="Convert"
+                            Background="#10A37F"
+                            Foreground="White"
+                            FontWeight="SemiBold"
+                            FontSize="13"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="Button_Click" />
+                </Grid>
             </Grid>
         </Border>
     </Grid>

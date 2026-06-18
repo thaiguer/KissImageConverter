@@ -106,4 +106,9 @@ public partial class MainWindow : Window
 
         e.Handled = true;
     }
+
+    private void ButtonClear_Click(object sender, RoutedEventArgs e)
+    {
+        ListBoxFiles.Items.Clear();
+    }
 }
