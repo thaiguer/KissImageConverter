@@ -153,7 +153,7 @@
 
                 <ProgressBar Name="ProgressBar"
                              Grid.Row="5"
-                             Background="#404040"
+                             Background="#2F2F2F"
                              BorderThickness="0"/>
 
                 <Grid Grid.Row="7">
