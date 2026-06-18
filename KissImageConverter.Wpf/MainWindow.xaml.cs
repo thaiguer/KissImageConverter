@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace KissImageConverter.Wpf;
 
@@ -68,10 +67,20 @@ public partial class MainWindow : Window
 
     private void DropArea_DragEnter(object sender, DragEventArgs e)
     {
-        if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            e.Effects = DragDropEffects.Copy;
-        else
-            e.Effects = DragDropEffects.None;
+        e.Effects = e.Data.GetDataPresent(DataFormats.FileDrop)
+            ? DragDropEffects.Copy
+            : DragDropEffects.None;
+
+        e.Handled = true;
+    }
+
+    private void DropArea_DragOver(object sender, DragEventArgs e)
+    {
+        e.Effects = e.Data.GetDataPresent(DataFormats.FileDrop)
+            ? DragDropEffects.Copy
+            : DragDropEffects.None;
+
+        e.Handled = true;
     }
 
     private void DropArea_Drop(object sender, DragEventArgs e)
@@ -83,11 +92,18 @@ public partial class MainWindow : Window
 
         foreach (string file in files)
         {
-            if (Path.GetExtension(file)
+            if (!Path.GetExtension(file)
                     .Equals(".heic", StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            if (!ListBoxFiles.Items.Contains(file))
             {
                 ListBoxFiles.Items.Add(file);
             }
         }
+
+        e.Handled = true;
     }
 }
