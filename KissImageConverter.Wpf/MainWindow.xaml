@@ -49,7 +49,9 @@
                         BorderBrush="#606060"
                         BorderThickness="1"
                         CornerRadius="6"
-                        Margin="0,0,0,10">
+                        Margin="0,0,0,10"
+                        Cursor="Hand"
+                        MouseLeftButtonUp="DropArea_Click">
 
                     <StackPanel HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
@@ -59,7 +61,7 @@
                                    HorizontalAlignment="Center"
                                    Foreground="#10A37F"/>
 
-                        <TextBlock Text="Drag and drop .HEIC files here"
+                        <TextBlock Text="Drag and drop .HEIC files"
                                    FontSize="13"
                                    Foreground="White"
                                    HorizontalAlignment="Center"/>

@@ -1,7 +1,9 @@
-﻿using Ookii.Dialogs.Wpf;
+﻿using Microsoft.Win32;
+using Ookii.Dialogs.Wpf;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using System.Windows.Input;
 
 namespace KissImageConverter.Wpf;
 
@@ -12,7 +14,7 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         TextBlockVersion.Text =
-            $"{ApplicationInfo.GetApplicationVersion()}";
+            ApplicationInfo.GetApplicationVersion();
 
         TextBoxDestino.Text = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
@@ -85,6 +87,38 @@ public partial class MainWindow : Window
         }
     }
 
+    private void AddFiles(IEnumerable<string> files)
+    {
+        foreach (string file in files)
+        {
+            if (!Path.GetExtension(file)
+                .Equals(".heic", StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            if (!ListBoxFiles.Items.Contains(file))
+            {
+                ListBoxFiles.Items.Add(file);
+            }
+        }
+    }
+
+    private void DropArea_Click(object sender, MouseButtonEventArgs e)
+    {
+        var dialog = new OpenFileDialog
+        {
+            Title = "Select HEIC files",
+            Filter = "HEIC files (*.heic)|*.heic",
+            Multiselect = true
+        };
+
+        if (dialog.ShowDialog() == true)
+        {
+            AddFiles(dialog.FileNames);
+        }
+    }
+
     private void DropArea_DragEnter(object sender, DragEventArgs e)
     {
         e.Effects = e.Data.GetDataPresent(DataFormats.FileDrop)
@@ -112,19 +146,7 @@ public partial class MainWindow : Window
 
         string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-        foreach (string file in files)
-        {
-            if (!Path.GetExtension(file)
-                .Equals(".heic", StringComparison.OrdinalIgnoreCase))
-            {
-                continue;
-            }
-
-            if (!ListBoxFiles.Items.Contains(file))
-            {
-                ListBoxFiles.Items.Add(file);
-            }
-        }
+        AddFiles(files);
 
         e.Handled = true;
     }
