@@ -1,5 +1,5 @@
-# <img width="1024" height="1024" alt="app" src="https://github.com/user-attachments/assets/d63eaf8b-62f3-4e5b-86e2-56e3d5afe0f4" />
- KissImageConverter
+# <img width="256" height="256" alt="app" src="https://github.com/user-attachments/assets/d63eaf8b-62f3-4e5b-86e2-56e3d5afe0f4" />
+ Kiss Image Converter
 
 **KISS = Keep It Stupid Simple** 😎
 
