@@ -87,20 +87,56 @@
                     </ListBox.ItemContainerStyle>
                 </ListBox>
 
-                <StackPanel Grid.Row="4"
-                            Margin="0,0,0,10">
-                    <TextBlock Text="Destination folder"
+                <Grid Grid.Row="4"
+                      Margin="0,0,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               Text="Destination folder"
                                FontSize="11"
                                Foreground="#B0B0B0"
                                Margin="0,0,0,4" />
-                    <TextBox Name="TextBoxDestino"
-                             Height="30"
-                             Padding="6,4"
-                             Background="#404040"
-                             Foreground="White"
-                             BorderBrush="#606060"
-                             BorderThickness="1" />
-                </StackPanel>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="8" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="8" />
+                            <ColumnDefinition Width="70" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox Grid.Column="0"
+                                 Name="TextBoxDestino"
+                                 Height="30"
+                                 Padding="6,4"
+                                 Background="#404040"
+                                 Foreground="White"
+                                 BorderBrush="#606060"
+                                 BorderThickness="1" />
+
+                        <Button Grid.Column="2"
+                                Height="30"
+                                Content="Browse..."
+                                Background="#505050"
+                                Foreground="White"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Click="ButtonBrowse_Click" />
+
+                        <Button Grid.Column="4"
+                                Height="30"
+                                Content="Open"
+                                Background="#505050"
+                                Foreground="White"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Click="ButtonOpenFolder_Click" />
+                    </Grid>
+                </Grid>
 
                 <ProgressBar Name="ProgressBar"
                              Grid.Row="5"

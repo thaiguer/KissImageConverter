@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using Ookii.Dialogs.Wpf;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
 
 namespace KissImageConverter.Wpf;
@@ -8,6 +10,10 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+
+        TextBoxDestino.Text = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+            "Converted");
     }
 
     private async void Button_Click(object sender, RoutedEventArgs e)
@@ -21,8 +27,8 @@ public partial class MainWindow : Window
             if (string.IsNullOrWhiteSpace(destinationFolder))
             {
                 MessageBox.Show(
-                    "Informe a pasta de destino.",
-                    "Erro",
+                    "Please select a destination folder.",
+                    "Error",
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
 
@@ -93,7 +99,7 @@ public partial class MainWindow : Window
         foreach (string file in files)
         {
             if (!Path.GetExtension(file)
-                    .Equals(".heic", StringComparison.OrdinalIgnoreCase))
+                     .Equals(".heic", StringComparison.OrdinalIgnoreCase))
             {
                 continue;
             }
@@ -110,5 +116,44 @@ public partial class MainWindow : Window
     private void ButtonClear_Click(object sender, RoutedEventArgs e)
     {
         ListBoxFiles.Items.Clear();
+    }
+
+    private void ButtonBrowse_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new VistaFolderBrowserDialog();
+
+        if (Directory.Exists(TextBoxDestino.Text))
+        {
+            dialog.SelectedPath = TextBoxDestino.Text;
+        }
+
+        if (dialog.ShowDialog(this) == true)
+        {
+            TextBoxDestino.Text = dialog.SelectedPath;
+        }
+    }
+
+    private void ButtonOpenFolder_Click(object sender, RoutedEventArgs e)
+    {
+        string folder = TextBoxDestino.Text.Trim();
+
+        if (string.IsNullOrWhiteSpace(folder))
+        {
+            MessageBox.Show(
+                "Please select a destination folder first.",
+                "Information",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+
+            return;
+        }
+
+        Directory.CreateDirectory(folder);
+
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = folder,
+            UseShellExecute = true
+        });
     }
 }
