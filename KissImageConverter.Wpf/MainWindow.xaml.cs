@@ -1,5 +1,4 @@
-﻿using KissImageConverter.Core;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using Ookii.Dialogs.Wpf;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -58,19 +57,28 @@ public partial class MainWindow : Window
 
             Directory.CreateDirectory(destinationFolder);
 
-            await Task.Run(() =>
+            var tasks = FileItems.Select(sourceFile =>
+            Task.Run(() =>
             {
-                var imageConverter = new Core.ImageConverter();
-
-                foreach (FileItem sourceFile in FileItems)
+                try
                 {
+                    var imageConverter = new Core.ImageConverter();
+
                     string targetFile = Path.Combine(
                         destinationFolder,
                         Path.GetFileNameWithoutExtension(sourceFile.FilePath) + ".jpg");
 
                     imageConverter.ConvertHeicToJpg(sourceFile.FilePath, targetFile);
+                    sourceFile.Status = "Converted";
                 }
-            });
+                catch
+                {
+                    sourceFile.Status = "Error";
+                }
+            })
+            );
+
+            await Task.WhenAll(tasks);
 
             MessageBox.Show(
                 "Conversion finished.",
