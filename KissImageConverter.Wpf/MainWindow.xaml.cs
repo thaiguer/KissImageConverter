@@ -1,5 +1,7 @@
-﻿using Microsoft.Win32;
+﻿using KissImageConverter.Core;
+using Microsoft.Win32;
 using Ookii.Dialogs.Wpf;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -9,9 +11,12 @@ namespace KissImageConverter.Wpf;
 
 public partial class MainWindow : Window
 {
+    public ObservableCollection<FileItem> FileItems { get; set; } = [];
+
     public MainWindow()
     {
         InitializeComponent();
+        DataContext = this;
 
         TextBlockVersion.Text =
             ApplicationInfo.GetApplicationVersion();
@@ -29,7 +34,7 @@ public partial class MainWindow : Window
         {
             string destinationFolder = TextBoxDestino.Text.Trim();
 
-            if (ListBoxFiles.Items.Count == 0)
+            if (FileItems.Count == 0)
             {
                 MessageBox.Show(
                     "Please add at least one HEIC file.",
@@ -57,13 +62,13 @@ public partial class MainWindow : Window
             {
                 var imageConverter = new Core.ImageConverter();
 
-                foreach (string sourceFile in ListBoxFiles.Items)
+                foreach (FileItem sourceFile in FileItems)
                 {
                     string targetFile = Path.Combine(
                         destinationFolder,
-                        Path.GetFileNameWithoutExtension(sourceFile) + ".jpg");
+                        Path.GetFileNameWithoutExtension(sourceFile.FilePath) + ".jpg");
 
-                    imageConverter.ConvertHeicToJpg(sourceFile, targetFile);
+                    imageConverter.ConvertHeicToJpg(sourceFile.FilePath, targetFile);
                 }
             });
 
@@ -97,9 +102,14 @@ public partial class MainWindow : Window
                 continue;
             }
 
-            if (!ListBoxFiles.Items.Contains(file))
+            var fileItem = new FileItem(file);
+
+            if (!FileItems.Any(x =>
+                string.Equals(x.FilePath,
+                              fileItem.FilePath,
+                              StringComparison.OrdinalIgnoreCase)))
             {
-                ListBoxFiles.Items.Add(file);
+                FileItems.Add(fileItem);
             }
         }
     }
@@ -153,7 +163,7 @@ public partial class MainWindow : Window
 
     private void ButtonClear_Click(object sender, RoutedEventArgs e)
     {
-        ListBoxFiles.Items.Clear();
+        FileItems.Clear();
     }
 
     private void ButtonBrowse_Click(object sender, RoutedEventArgs e)

@@ -36,6 +36,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
+                <!-- TITLE -->
                 <TextBlock Grid.Row="0"
                            Text="Convert HEIC to JPG"
                            FontSize="18"
@@ -43,6 +44,7 @@
                            Foreground="White"
                            Margin="0,0,0,10"/>
 
+                <!-- DROP AREA -->
                 <Border Grid.Row="1"
                         Name="DropArea"
                         Background="#404040"
@@ -80,24 +82,70 @@
                            Foreground="White"
                            Margin="0,0,0,4"/>
 
-                <ListBox Grid.Row="3"
-                         Name="ListBoxFiles"
-                         Background="#404040"
-                         Foreground="White"
-                         BorderBrush="#606060"
-                         BorderThickness="1"
-                         ScrollViewer.VerticalScrollBarVisibility="Auto"
-                         Margin="0,0,0,10">
+                <ListView Grid.Row="3"
+                          ItemsSource="{Binding FileItems}"
+                          Background="#404040"
+                          Foreground="White"
+                          BorderBrush="#606060">
 
-                    <ListBox.ItemContainerStyle>
-                        <Style TargetType="ListBoxItem">
-                            <Setter Property="Padding" Value="4"/>
-                            <Setter Property="Margin" Value="1"/>
+                    <ListView.Resources>
+                        <Style TargetType="GridViewColumnHeader">
                             <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="#505050"/>
+                            <Setter Property="Padding" Value="5"/>
                         </Style>
-                    </ListBox.ItemContainerStyle>
-                </ListBox>
 
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Foreground" Value="White"/>
+
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListViewItem">
+                                        <Border x:Name="Bd"
+                        Background="#404040"
+                        Padding="4">
+
+                                            <!-- 🔥 CORRETO para GridView -->
+                                            <GridViewRowPresenter Content="{TemplateBinding Content}"
+                                          Columns="{Binding RelativeSource={RelativeSource AncestorType=ListView}, Path=View.Columns}"/>
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Bd"
+                                Property="Background"
+                                Value="#505050"/>
+                                            </Trigger>
+
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Bd"
+                                Property="Background"
+                                Value="#2D6CDF"/>
+                                            </Trigger>
+
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+                    </ListView.Resources>
+
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Header="Name"
+                                            DisplayMemberBinding="{Binding FilePath}" />
+
+                            <GridViewColumn Header="Status"
+                                            DisplayMemberBinding="{Binding Status}" />
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <!-- DESTINATION -->
                 <Grid Grid.Row="4"
                       Margin="0,0,0,10">
 
@@ -151,11 +199,13 @@
                     </Grid>
                 </Grid>
 
+                <!-- PROGRESS -->
                 <ProgressBar Name="ProgressBar"
                              Grid.Row="5"
                              Background="#2F2F2F"
                              BorderThickness="0"/>
 
+                <!-- BUTTONS -->
                 <Grid Grid.Row="7">
 
                     <Grid.ColumnDefinitions>
@@ -188,6 +238,7 @@
                             Click="Button_Click"/>
                 </Grid>
 
+                <!-- VERSION -->
                 <TextBlock Grid.Row="8"
                            Name="TextBlockVersion"
                            Margin="0,8,0,0"
