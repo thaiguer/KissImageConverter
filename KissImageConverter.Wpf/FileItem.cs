@@ -19,7 +19,7 @@ public class FileItem : ObservableObject
 
     public FileItem(string filePath)
     {
-        FilePath = filePath;
-        Status = string.Empty;
+        _filePath = filePath;
+        _status = string.Empty;
     }
 }
