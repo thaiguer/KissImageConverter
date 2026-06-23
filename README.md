@@ -5,10 +5,10 @@
 
 A tiny and straightforward image converter focused on doing one thing well:
 
-✅ Convert **HEIC** images to **JPG**
-✅ Batch conversion support 📂
-✅ Lightweight and easy to use 🚀
-✅ No unnecessary features 🙃
+✅ Convert **HEIC** images to **JPG**\
+✅ Batch conversion support 📂\
+✅ Lightweight and easy to use 🚀\
+✅ No unnecessary features 🙃\
 
 The only supported conversion is:
 > **HEIC → JPG**
