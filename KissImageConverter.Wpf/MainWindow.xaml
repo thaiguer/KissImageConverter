@@ -10,7 +10,6 @@
         Height="500"
         MinWidth="600"
         MinHeight="500"
-        Background="#212121"
         WindowStartupLocation="CenterScreen">
 
     <Grid AllowDrop="True"
@@ -19,8 +18,7 @@
           Drop="DropArea_Drop"
           Margin="12">
 
-        <Border Background="#2F2F2F"
-                CornerRadius="8"
+        <Border CornerRadius="8"
                 Padding="12">
 
             <Grid>
@@ -40,14 +38,12 @@
                            Text="Convert HEIC to JPG"
                            FontSize="18"
                            FontWeight="SemiBold"
-                           Foreground="White"
                            Margin="0,0,0,10"/>
 
                 <Border Grid.Row="1"
                         Name="DropArea"
-                        Background="#404040"
-                        BorderBrush="#606060"
                         BorderThickness="1"
+                        BorderBrush="#10A37F"
                         CornerRadius="6"
                         Margin="0,0,0,10"
                         Cursor="Hand"
@@ -63,12 +59,10 @@
 
                         <TextBlock Text="Drag and drop .HEIC files"
                                    FontSize="13"
-                                   Foreground="White"
                                    HorizontalAlignment="Center"/>
 
                         <TextBlock Text="or click to select"
                                    FontSize="10"
-                                   Foreground="#B0B0B0"
                                    HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Border>
@@ -77,30 +71,22 @@
                            Text="Files"
                            FontSize="12"
                            FontWeight="SemiBold"
-                           Foreground="White"
                            Margin="0,0,0,4"/>
 
                 <ListView Grid.Row="3"
                           ItemsSource="{Binding FileItems}"
-                          Background="#404040"
-                          Foreground="White"
-                          BorderBrush="#606060">
+                          BorderBrush="#10A37F">
 
                     <ListView.Resources>
                         <Style TargetType="GridViewColumnHeader">
-                            <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="Background" Value="#505050"/>
                             <Setter Property="Padding" Value="5"/>
                         </Style>
 
                         <Style TargetType="ListViewItem">
-                            <Setter Property="Foreground" Value="White"/>
-
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="ListViewItem">
                                         <Border x:Name="Bd"
-                                                Background="#404040"
                                                 Padding="4">
                                             <GridViewRowPresenter Content="{TemplateBinding Content}"
                                                                   Columns="{Binding RelativeSource={RelativeSource AncestorType=ListView}, Path=View.Columns}"/>
@@ -110,16 +96,10 @@
 
                                             <Trigger Property="IsMouseOver"
                                                      Value="True">
-                                                <Setter TargetName="Bd"
-                                                        Property="Background"
-                                                        Value="#505050"/>
                                             </Trigger>
 
                                             <Trigger Property="IsSelected"
                                                      Value="True">
-                                                <Setter TargetName="Bd"
-                                                        Property="Background"
-                                                        Value="#2D6CDF"/>
                                             </Trigger>
 
                                         </ControlTemplate.Triggers>
@@ -154,7 +134,6 @@
                     <TextBlock Grid.Row="0"
                                Text="Destination folder"
                                FontSize="11"
-                               Foreground="#B0B0B0"
                                Margin="0,0,0,4"/>
 
                     <Grid Grid.Row="1">
@@ -171,17 +150,14 @@
                                  Name="TextBoxDestino"
                                  Height="30"
                                  Padding="6,4"
-                                 Background="#404040"
-                                 Foreground="White"
-                                 BorderBrush="#606060"
-                                 BorderThickness="1"/>
+                                 BorderThickness="1"
+                                 BorderBrush="#10A37F"/>
 
                         <Button Grid.Column="2"
                                 Height="30"
                                 Content="Browse..."
-                                Background="#505050"
-                                Foreground="White"
-                                BorderThickness="0"
+                                BorderThickness="1"
+                                BorderBrush="#10A37F"
                                 Cursor="Hand"
                                 HorizontalAlignment="Stretch"
                                 Click="ButtonBrowse_Click"/>
@@ -189,9 +165,8 @@
                         <Button Grid.Column="4"
                                 Height="30"
                                 Content="Open"
-                                Background="#505050"
-                                Foreground="White"
-                                BorderThickness="0"
+                                BorderThickness="1"
+                                BorderBrush="#10A37F"
                                 Cursor="Hand"
                                 HorizontalAlignment="Stretch"
                                 Click="ButtonOpenFolder_Click"/>
@@ -200,7 +175,6 @@
 
                 <ProgressBar Name="ProgressBar"
                              Grid.Row="5"
-                             Background="#2F2F2F"
                              BorderThickness="0"/>
 
                 <Grid Grid.Row="7">
@@ -214,11 +188,10 @@
                     <Button Grid.Column="0"
                             Height="36"
                             Content="Clear"
-                            Background="#505050"
-                            Foreground="White"
                             FontWeight="SemiBold"
                             FontSize="13"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="#10A37F"
                             Cursor="Hand"
                             HorizontalAlignment="Stretch"
                             Click="ButtonClear_Click"/>
@@ -228,7 +201,6 @@
                             Height="36"
                             Content="Convert"
                             Background="#10A37F"
-                            Foreground="White"
                             FontWeight="SemiBold"
                             FontSize="13"
                             BorderThickness="0"
@@ -241,8 +213,7 @@
                            Name="TextBlockVersion"
                            Margin="0,8,0,0"
                            HorizontalAlignment="Right"
-                           FontSize="11"
-                           Foreground="#808080"/>
+                           FontSize="11"/>
             </Grid>
         </Border>
     </Grid>

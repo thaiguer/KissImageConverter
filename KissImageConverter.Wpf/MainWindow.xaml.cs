@@ -25,12 +25,6 @@ public partial class MainWindow : Window
             "Converted");
     }
 
-    protected override void OnSourceInitialized(EventArgs e)
-    {
-        base.OnSourceInitialized(e);
-        WindowThemeHelper.UseDarkMode(this);
-    }
-
     private async void Button_Click(object sender, RoutedEventArgs e)
     {
         ProgressBar.IsIndeterminate = true;
