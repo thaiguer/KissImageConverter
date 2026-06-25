@@ -1,5 +1,4 @@
 ﻿using Microsoft.Win32;
-using Ookii.Dialogs.Wpf;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
@@ -176,16 +175,16 @@ public partial class MainWindow : Window
 
     private void ButtonBrowse_Click(object sender, RoutedEventArgs e)
     {
-        var dialog = new VistaFolderBrowserDialog();
+        var dialog = new OpenFolderDialog();
 
         if (Directory.Exists(TextBoxDestino.Text))
         {
-            dialog.SelectedPath = TextBoxDestino.Text;
+            dialog.InitialDirectory = TextBoxDestino.Text;
         }
 
-        if (dialog.ShowDialog(this) == true)
+        if (dialog.ShowDialog() == true)
         {
-            TextBoxDestino.Text = dialog.SelectedPath;
+            TextBoxDestino.Text = dialog.FolderName;
         }
     }
 

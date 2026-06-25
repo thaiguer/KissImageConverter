@@ -19,8 +19,4 @@
     <ProjectReference Include="..\KissImageConverter.Core\KissImageConverter.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
-  </ItemGroup>
-
 </Project>
