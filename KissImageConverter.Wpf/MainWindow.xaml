@@ -36,7 +36,6 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!-- TITLE -->
                 <TextBlock Grid.Row="0"
                            Text="Convert HEIC to JPG"
                            FontSize="18"
@@ -44,7 +43,6 @@
                            Foreground="White"
                            Margin="0,0,0,10"/>
 
-                <!-- DROP AREA -->
                 <Border Grid.Row="1"
                         Name="DropArea"
                         Background="#404040"
@@ -102,26 +100,26 @@
                                 <Setter.Value>
                                     <ControlTemplate TargetType="ListViewItem">
                                         <Border x:Name="Bd"
-                        Background="#404040"
-                        Padding="4">
-
-                                            <!-- 🔥 CORRETO para GridView -->
+                                                Background="#404040"
+                                                Padding="4">
                                             <GridViewRowPresenter Content="{TemplateBinding Content}"
-                                          Columns="{Binding RelativeSource={RelativeSource AncestorType=ListView}, Path=View.Columns}"/>
+                                                                  Columns="{Binding RelativeSource={RelativeSource AncestorType=ListView}, Path=View.Columns}"/>
                                         </Border>
 
                                         <ControlTemplate.Triggers>
 
-                                            <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger Property="IsMouseOver"
+                                                     Value="True">
                                                 <Setter TargetName="Bd"
-                                Property="Background"
-                                Value="#505050"/>
+                                                        Property="Background"
+                                                        Value="#505050"/>
                                             </Trigger>
 
-                                            <Trigger Property="IsSelected" Value="True">
+                                            <Trigger Property="IsSelected"
+                                                     Value="True">
                                                 <Setter TargetName="Bd"
-                                Property="Background"
-                                Value="#2D6CDF"/>
+                                                        Property="Background"
+                                                        Value="#2D6CDF"/>
                                             </Trigger>
 
                                         </ControlTemplate.Triggers>
@@ -145,7 +143,6 @@
                     </ListView.View>
                 </ListView>
 
-                <!-- DESTINATION -->
                 <Grid Grid.Row="4"
                       Margin="0,0,0,10">
 
@@ -186,6 +183,7 @@
                                 Foreground="White"
                                 BorderThickness="0"
                                 Cursor="Hand"
+                                HorizontalAlignment="Stretch"
                                 Click="ButtonBrowse_Click"/>
 
                         <Button Grid.Column="4"
@@ -195,17 +193,16 @@
                                 Foreground="White"
                                 BorderThickness="0"
                                 Cursor="Hand"
+                                HorizontalAlignment="Stretch"
                                 Click="ButtonOpenFolder_Click"/>
                     </Grid>
                 </Grid>
 
-                <!-- PROGRESS -->
                 <ProgressBar Name="ProgressBar"
                              Grid.Row="5"
                              Background="#2F2F2F"
                              BorderThickness="0"/>
 
-                <!-- BUTTONS -->
                 <Grid Grid.Row="7">
 
                     <Grid.ColumnDefinitions>
@@ -223,6 +220,7 @@
                             FontSize="13"
                             BorderThickness="0"
                             Cursor="Hand"
+                            HorizontalAlignment="Stretch"
                             Click="ButtonClear_Click"/>
 
                     <Button Grid.Column="2"
@@ -235,10 +233,10 @@
                             FontSize="13"
                             BorderThickness="0"
                             Cursor="Hand"
+                            HorizontalAlignment="Stretch"
                             Click="Button_Click"/>
                 </Grid>
 
-                <!-- VERSION -->
                 <TextBlock Grid.Row="8"
                            Name="TextBlockVersion"
                            Margin="0,8,0,0"
