@@ -13,9 +13,14 @@ A tiny and straightforward image converter focused on doing one thing well:
 The only supported conversion is:
 > **HEIC → JPG**
 
-Sometimes all you need is a button that just works. ✨
+Sometimes all you need is a few buttons that just works. ✨
 
-<img width="500" height="392" alt="image" src="https://github.com/user-attachments/assets/9b1ea15f-d9d7-4dc0-b441-d4353e8cc0ae" />
+## Auto Dark Theme (Based on System)
+<img width="516" height="435" alt="image" src="https://github.com/user-attachments/assets/f911b423-a53b-4130-88f0-ffe88c7e3765" />
+
+## Also, Light Theme
+<img width="516" height="435" alt="image" src="https://github.com/user-attachments/assets/a10f229a-b481-4790-b0fc-f503790f96fe" />
+
 
 ## 📸 Why?
 Windows doesn't always handle HEIC images out of the box, and many computers don't have the required codecs installed. KissImageConverter aims to provide a simple and free solution without the hassle.
